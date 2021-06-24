@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": "6a992225-e858-44de-8a55-c33ae2097fa5",
+      "name": "Hinkle Class for Spring 2021",
+      "code": "12345",
+      "startDate": "2021-06-25"
+    },
+    {
+      "id": "df7e59bb-0fec-4dd2-93ae-c5b14f62278f",
+      "name": "Taylor Class for Summer 2021",
+      "code": "56789",
+      "startDate": "2021-06-27"
+    },
+    {
+      "id": "7d2b1b43-e0fd-4fff-8d15-7d4988769e3d",
+      "name": "O`Meara Class for Fall 2021",
+      "code": "45678",
+      "startDate": "2021-06-29"
+    }
+  ]
+}
