@@ -1,0 +1,31 @@
+<form class="offset-md-3 col-md-6" [formGroup]="classForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="name" class="form-label">Class Name</label>
+        <input type="text" class="form-control mb-1" id="name" placeholder="Enter Class Name" formControlName="name">
+        <div class="invalid-feedback d-block" *ngIf="submitted && classForm.controls?.name?.errors">
+            <span *ngIf="classForm.controls?.name?.errors?.required">Class Name is required</span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="code" class="form-label">Class Code</label>
+        <input type="text" class="form-control mb-1" id="code" placeholder="Enter Class Code" formControlName="code">
+        <div class="invalid-feedback d-block" *ngIf="submitted && classForm.controls?.code?.errors">
+            <span *ngIf="classForm.controls?.code?.errors?.required">Class Code is required</span>
+            <span *ngIf="classForm.controls?.code?.errors?.minlength">Class Code cannot be less than 5 characters</span>
+            <span *ngIf="classForm.controls?.code?.errors?.maxlength">Class Code cannot be more than 5 characters</span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="startDate" class="form-label">Class Start Date</label>
+        <input type="date" class="form-control mb-1" id="startDate" placeholder="Enter Class StartDate" formControlName="startDate">
+        <div class="invalid-feedback d-block" *ngIf="submitted && classForm.controls?.startDate?.errors">
+            <span *ngIf="classForm.controls?.startDate?.errors?.required">Class Start Date is required</span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="row">
+            <input type="submit" class="form-control col-md-4 btn btn-primary " value="ADD CLASS"/>
+            <input type="reset" class="offset-md-4 col-md-4 btn btn-primary " value="CANCEL"/>
+        </div>
+    </div>
+</form>

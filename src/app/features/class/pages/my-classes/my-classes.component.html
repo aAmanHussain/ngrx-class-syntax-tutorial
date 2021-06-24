@@ -1,0 +1,34 @@
+<section class="text-center p-3">
+    <h2>MY CLASSES</h2>
+</section>
+
+<section>
+    <div *ngIf="(classesLoaded$ | async); else loadingTemplate">
+        <ng-container *ngIf="(classes$ | async) as classes">
+            <ul class="list-group" *ngIf="classes.length">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-4">Class Name</div>
+                        <div class="col-md-2">Class Code</div>
+                        <div class="col-md-3">Start Date</div>
+                        <div class="col-md-3">&nbsp;</div>
+                    </div>
+                </li>
+                <li class="list-group-item" *ngFor="let class of classes;">
+                    <app-class-list-item [classDetails]="class" (deleteClassEmitter)="handleDeleteClass($event)"></app-class-list-item>
+                </li>
+            </ul>
+
+            <div class="row" *ngIf="!classes.length">
+                <div class="col-md-12">
+                    <p class="text-center">No Classes Found</p>
+                </div>
+            </div>
+        </ng-container>    
+    </div>
+
+    <ng-template #loadingTemplate>
+        <app-spinner></app-spinner>
+    </ng-template>
+    
+</section>
